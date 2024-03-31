@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index HTML</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="userList">
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(users => {
+                let userList = document.getElementById('userList');
+                users.forEach(user => {
+                    let userDiv = document.createElement('div');
+                    userDiv.classList.add('userDiv');
+                    userDiv.innerHTML = `<h2>ID: ${user.id}<br>Name: ${user.name}<br><button onclick="showDetails(${user.id})">Full Info</button></h2>`;
+                    userList.appendChild(userDiv);
+                });
+            });
+        function showDetails(userId) {
+            window.location.href = `user-details.html?id=${userId}`;
+        }
+    </script>
+
+</div>
+</body>
+</html>
+
+
+
+

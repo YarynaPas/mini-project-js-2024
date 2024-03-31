@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details</title>
+    <link rel="stylesheet" href="user-details.css">
+</head>
+<body>
+<div class="user-details">
+    <h2>User Details</h2>
+    <p><span class='text'>ID:</span> <span id="userId"></span></p>
+    <p><span class='text'>Name:</span> <span id="userName"></span></p>
+    <p><span class='text'>Username:</span> <span id="userUsername"></span></p>
+    <p><span class='text'>Email:</span> <span id="userEmail"></span></p>
+    <p><span class='text'>Address:</span> <span id="userAddress"></span></p>
+    <p><span class='text'>City:</span> <span id="userCity"></span></p>
+    <p><span class='text'>Zipcode:</span> <span id="userZipcode"></span></p>
+    <p><span class='text'>Geo:</span> <span id="userGeo"></span></p>
+    <p><span class='text'>Phone:</span><span id="userPhone"></span></p>
+    <p><span class='text'>Website:</span><span id="userWebsite"></span></p>
+    <p><span class='text'>Company:</span><span id="userCompany"></span></p>
+</div>
+//
+<div id="btn">
+    <button type="button" onclick="posts()"> Post of current user </button>
+</div>
+<div class="red-line"></div>
+<div id="userPosts"></div>
+<script>
+    let urlParams = new URLSearchParams(window.location.search);
+    let userId = urlParams.get('id');
+    fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+        .then(response => response.json())
+        .then(user => {
+            document.getElementById('userId').textContent = user.id;
+            document.getElementById('userName').textContent = user.name;
+            document.getElementById('userUsername').textContent = user.username;
+            document.getElementById('userEmail').textContent = user.email;
+            document.getElementById('userAddress').textContent = `${user.address.street}, ${user.address.suite}`;
+            document.getElementById('userCity').textContent = user.address.city;
+            document.getElementById('userZipcode').textContent = user.address.zipcode;
+            document.getElementById('userGeo').textContent = `${user.address.geo.lat}, ${user.address.geo.lng}`;
+            document.getElementById('userPhone').textContent = user.phone;
+            document.getElementById('userWebsite').textContent = user.website;
+            document.getElementById('userCompany').textContent = `${user.company.name}, ${user.company.catchPhrase}, ${user.company.bs}`;
+        });
+    function posts() {
+        fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
+            .then(response => response.json())
+            .then(posts => {
+                let userPostsDiv = document.getElementById('userPosts');
+                userPostsDiv.innerHTML = '<h2>User Posts</h2>';
+                userPostsDiv.style.alignSelf = 'center';
+                let arr = document.createElement('div');
+                arr.innerHTML = `&#8595;`;
+                arr.classList.add('arrow');
+                userPostsDiv.appendChild(arr);
+                let postsWrapper = document.createElement('div');
+                posts.forEach(post => {
+                    const buttonWrapper = document.createElement('div');
+                    buttonWrapper.classList.add('buttonWrapper', 'knopky');
+                    const postBtn = document.createElement('button');
+                    postBtn.textContent = post.title;
+                    postBtn.addEventListener('click', () => {
+                        window.location.href = `post-details.html?id=${post.id}`;
+                    });
+                    buttonWrapper.appendChild(postBtn);
+                    postsWrapper.appendChild(buttonWrapper);
+                });
+                userPostsDiv.appendChild(postsWrapper);
+            });
+    }
+</script>
+</body>
+</html>
+
+

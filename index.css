@@ -1,0 +1,61 @@
+#userList {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: "Yu Gothic UI", serif, sans-serif;
+    flex-direction: row;
+}
+.userDiv {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #93ACD9;
+    border: 2px solid midnightblue;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    flex-basis: calc(50% - 30px);
+    box-sizing: border-box;
+    color: beige;
+    width: 40vw;
+    height: 25vh;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 10px 11px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+h2 {
+    font-family: "Yu Gothic UI", serif;
+    font-size: 20px;
+    margin: 0 0 15px;
+
+}
+button {
+    align-items: center;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "Yu Gothic UI", serif;
+    height: 48px;
+    justify-content: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: left;
+    transition: box-shadow .15s,transform .5s;
+    font-size: 18px;
+    margin-top: 10px;
+    width: 10vw;
+
+}
+
+.button-30:active {
+        box-shadow: #D6D6E7 0 3px 7px inset;
+        transform: translateY(2px);
+}
+
+
+

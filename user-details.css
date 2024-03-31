@@ -1,0 +1,118 @@
+.user-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #93ACD9;
+    border: 2px solid midnightblue;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    flex-basis: calc(50% - 30px);
+    box-sizing: border-box;
+    color: beige;
+    width: 90%;
+    height: 80vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: "Yu Gothic UI", serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: "Yu Gothic UI", serif;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 24px;
+    font-family: "Yu Gothic UI", serif;
+    text-align: left;
+}
+
+button {
+    align-items: center;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border: none;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "Yu Gothic UI", serif;
+    font-size: 18px;
+    height: 48px;
+    justify-content: center;
+    padding: 0 16px;
+    margin-top: 10px;
+    transition: box-shadow 0.15s, transform 0.5s;
+    width: 90%;
+    height: 70px;
+    text-align: left;
+}
+
+.text {
+    font-weight: bold;
+    margin: 1px;
+    font-family: "Yu Gothic UI", serif;
+}
+
+#btn {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    text-align: left;
+    margin-bottom: 30px;
+}
+#userPosts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#userPosts h2 {
+    margin-top: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+#userPosts button {
+    width: 18vw;
+    margin: 10px 5px 5px;
+    height: 120px;
+}
+.arrow{
+    font-size: 30px;
+    font-weight: bold;
+}
+.postsWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.userPostsDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.knopky{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+}
+
+

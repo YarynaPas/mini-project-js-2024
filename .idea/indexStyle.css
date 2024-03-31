@@ -1,0 +1,24 @@
+#userList {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    flex-direction: row;
+}
+.userDiv {
+    background-color: slateblue;
+    border: 2px solid midnightblue;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    flex-basis: calc(50% - 20px);
+    box-sizing: border-box;
+    color: beige;
+    width: 40vw;
+    height: 25vh;
+}
+h2 {
+    margin: 0;
+    font-family: "Yu Gothic UI", serif;
+}
